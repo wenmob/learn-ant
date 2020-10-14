@@ -50,6 +50,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
+@import "@/style/variable.less";
 .empty-icon {
   margin-top: 150px;
 }
@@ -62,13 +63,13 @@ export default {
 }
 .empty-prompt {
   margin-top: 7px;
-  font-size: 16px;
+  font-size: @FontSizeBig;
 }
 .empty-error {
-  font-size: 16px;
+  font-size: @FontSizeBig;
   color: #4f5359;
 }
 .empty-ul {
-  font-size: 16px;
+  font-size: @FontSizeBig;
 }
 </style>

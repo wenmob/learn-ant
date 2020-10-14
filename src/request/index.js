@@ -2,7 +2,7 @@ import axios from "axios";
 import querystring from "querystring";
 import errorCode from "./errorCode";
 import { Message } from "ant-design-vue";
-import { filterObject } from "@/utils";
+import { filterObject } from "@/utils/filter.js";
 
 const service = axios.create({
   timeout: 30000,
@@ -34,6 +34,7 @@ service.interceptors.request.use(
   }
 );
 
+// response拦截器
 service.interceptors.response.use(
   (res) => {
     const status = Number(res.status) || 200;

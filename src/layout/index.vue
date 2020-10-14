@@ -15,17 +15,32 @@
     </a-layout-sider>
     <a-layout>
       <a-layout-header>
-        <a-icon
-          class="trigger"
-          :type="collapsed ? 'menu-unfold' : 'menu-fold'"
-          @click="() => (collapsed = !collapsed)"
-        />
-        <div class="ly-head_title">
-          <a-icon type="vertical-left"></a-icon>
-          <transition name="show">
-            <a v-if="getActiveMenuItem.name">
-              {{ getActiveMenuItem.name || "" }}</a>
-          </transition>
+        <div>
+          <a-icon
+            class="trigger"
+            :type="collapsed ? 'menu-unfold' : 'menu-fold'"
+            @click="() => (collapsed = !collapsed)"
+          />
+          <div class="ly-head_title">
+            <a-icon type="vertical-left"></a-icon>
+            <transition name="show">
+              <a v-if="getActiveMenuItem.name">
+                {{ getActiveMenuItem.name || "" }}</a>
+            </transition>
+          </div>
+        </div>
+        <div style="float: right; margin-right: 10px">
+          <a-icon
+            class="trigger"
+            type="user"
+          />
+          <div class="ly-head_title2">
+            <a>程某某</a>
+          </div>
+          <a-icon
+            class="trigger"
+            type="logout"
+          />
         </div>
       </a-layout-header>
       <div
@@ -163,6 +178,7 @@ export default {
 };
 </script>
 <style lang="less">
+@import "@/style/variable.less";
 #ly-container {
   width: 100%;
   height: 100%;
@@ -194,9 +210,18 @@ export default {
 }
 #ly-container .ly-head_title {
   float: left;
-  font-size: 16px;
+  font-size: @FontSizeBig;
   margin-top: 11px;
   min-width: 200px;
+  a {
+    color: #585958;
+    cursor: default;
+  }
+}
+#ly-container .ly-head_title2 {
+  float: left;
+  font-size: @FontSizeBig;
+  margin-top: 12px;
   a {
     color: #585958;
     cursor: default;
